@@ -1,6 +1,6 @@
 package org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio;
 
-import static org.junit.Assert.assertThrows;
+
 
 import java.util.Objects;
 
