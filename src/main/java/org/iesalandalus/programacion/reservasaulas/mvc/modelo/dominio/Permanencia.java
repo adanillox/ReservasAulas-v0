@@ -7,16 +7,16 @@ import java.util.Objects;
 public class Permanencia {
 private Tramo tramo;	
 private LocalDate dia;
-private static  final DateTimeFormatter FORMATO_DIA=DateTimeFormatter.ofPattern("dd/mm/aaaa");
+private static  final DateTimeFormatter FORMATO_DIA=DateTimeFormatter.ofPattern("dd/MM/yyyy");
  
  public Permanencia(LocalDate dia,Tramo tramo) {
 	 setDia(dia);
-	 setTramo(tramo);;
+	 setTramo(tramo);
 	 
  }
  public Permanencia(Permanencia permanencia) {
 	 if (permanencia == null) {
-			throw new IllegalArgumentException("No se puede copiar una permanencia nula.");
+			throw new NullPointerException("ERROR: No se puede copiar una permanencia nula.");
 		}
 	 else {
 		 setDia(permanencia.getDia());
@@ -29,7 +29,7 @@ public Tramo getTramo() {
 }
 private void setTramo(Tramo tramo) {
 	if (tramo == null) {
-		throw new IllegalArgumentException("El tramo de una permanencia no puede ser nulo.");
+		throw new NullPointerException("ERROR: El tramo de una permanencia no puede ser nulo.");
 	}
 	else {
 		this.tramo = tramo;
@@ -42,7 +42,7 @@ public LocalDate getDia() {
 }
 private void setDia(LocalDate dia) {
 	if (dia == null) {
-		throw new IllegalArgumentException("El día de una permanencia no puede ser nulo.");
+		throw new NullPointerException("ERROR: El día de una permanencia no puede ser nulo.");
 	}
 	else {
 		this.dia = dia;
@@ -51,7 +51,7 @@ private void setDia(LocalDate dia) {
 }
 @Override
 public String toString() {
-	return "[dia="+dia.format(FORMATO_DIA)+", tramo="+tramo.toString()+"]";
+	return "dia="+dia.format(FORMATO_DIA)+", tramo="+tramo.toString();
 }
 @Override
 public int hashCode() {

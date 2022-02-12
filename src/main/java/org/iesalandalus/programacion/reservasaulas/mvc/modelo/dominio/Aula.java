@@ -8,11 +8,14 @@ public class Aula {
 private String nombre;
 
 public Aula(String nombre) {
-	setNombre(nombre);
-};
+
+		setNombre(nombre);
+	}
+	
+
 public Aula(Aula aula) {
 	if (aula == null) {
-		throw new IllegalArgumentException("No se puede copiar un aula nula.");
+		throw new NullPointerException("ERROR: No se puede copiar un aula nula.");
 	}
 	else {
 		setNombre(aula.getNombre());
@@ -22,10 +25,10 @@ public Aula(Aula aula) {
 }
 private void setNombre(String nombre) {
 	if (nombre == null) {
-		throw new IllegalArgumentException("El nombre del aula no puede ser nulo.");	
+		throw new NullPointerException("ERROR: El nombre del aula no puede ser nulo.");	
 	}
 	if(nombre=="") {
-		throw new IllegalArgumentException("El nombre del aula no puede estar vacío.");
+		throw new IllegalArgumentException("ERROR: El nombre del aula no puede estar vacío.");
 	}
 	else {
 		this.nombre=nombre;
@@ -55,7 +58,7 @@ public boolean equals(Object obj) {
 }
 @Override
 public String toString() {
-	return "[nombre=" + nombre + "]";
+	return "nombre Aula=" + nombre;
 }
 
 }
